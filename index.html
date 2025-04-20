@@ -115,10 +115,10 @@
           <div class="text-center w-full px-4">
             <h1 class="text-2xl font-bold mb-6">Are you employed?</h1>
             <div class="space-y-4">
-              <a class="dynamic-link add-url-params block w-full sm:w-auto px-4 py-4 bg-[#4396d5] text-white font-bold rounded-lg text-center text-3xl shadow " href="congratulation.php">
+              <a class="dynamic-link add-url-params block w-full sm:w-auto px-4 py-4 bg-[#4396d5] text-white font-bold rounded-lg text-center text-3xl shadow " href="congratulations.html">
                 Yes
               </a>
-              <a class="dynamic-link add-url-params block w-full sm:w-auto px-4 py-4 bg-[#4396d5] text-white font-bold rounded-lg text-center text-3xl shadow" href="congratulation.php">
+              <a class="dynamic-link add-url-params block w-full sm:w-auto px-4 py-4 bg-[#4396d5] text-white font-bold rounded-lg text-center text-3xl shadow" href="congratulations.html">
                 No
               </a>
             </div>
@@ -255,7 +255,7 @@
 
   // Generate the new href string based on whether parameters already exist
   const newParams = url.searchParams.toString();
-  const newUrl = './congratulation.php' + (newParams ? '?' + newParams : '');
+  const newUrl = './congratulations.html' + (newParams ? '?' + newParams : '');
 
   // Update all anchor tags with the class 'dynamic-link'
   const anchors = document.querySelectorAll('a.dynamic-link');
