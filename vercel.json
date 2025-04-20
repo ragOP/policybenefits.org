@@ -1,0 +1,14 @@
+{
+    "rewrites": [
+      
+      {
+        "source": "/englf1",
+        "destination": "/index.html"
+    
+      }
+       
+      
+     
+    ]
+  }
+  
