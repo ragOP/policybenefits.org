@@ -1,0 +1,280 @@
+<!DOCTYPE html><html><head>
+  <title>Memorial Care Fund</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .testimonial-wrapper {
+      position: relative;
+      height: 3.5rem;
+      /* adjust according to the image height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .testimonial {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .testimonial.show {
+      opacity: 1;
+    }
+  </style>
+
+</head><body class="bg-[#eeeeee]">
+  <div class="h-6 bg-[#63b1f9]"></div>
+
+  <!-- Step 1 -->
+  <div id="step1">
+    <!-- testimonials -->
+    <div class="container mx-auto">
+      <div class="mx-auto w-full md:w-1/4 bg-[#beebfd] p-4 rounded-b-2xl">
+        <div class="testimonial-wrapper">
+          <img src="images/testimonial-1.png" class="testimonial mx-auto h-14">
+          <img src="images/testimonial-2.png" class="testimonial mx-auto h-14">
+          <img src="images/testimonial-3.png" class="testimonial mx-auto h-14">
+        </div>
+      </div>
+    </div>
+    <!-- /testimonials-->
+
+    <!-- question -->
+    <div class="container mx-auto">
+      <div class="mx-auto w-full md:w-3/4 border-t border-[#dfe3e6] mt-4 pt-4">
+        <div class="text-center text-sm mb-4">
+          Achieve peace of mind with our trusted plan.
+        </div>
+
+        <div class="text-lg font-bold text-center mb-4">
+          Check Eligibility for a
+        </div>
+
+        <div class="text-4xl font-bold text-center mb-4">
+          <span class="relative text-black">
+           $<span id="amount"></span>
+            <span class="absolute inset-x-0 bottom-0 h-3 bg-yellow-300 -z-10"></span> </span>Life Insurance Benefit
+        </div>
+
+        <div class="max-w-3/4 mx-auto bg-[#eafcfc] rounded-lg shadow-lg p-6 text-center">
+          <p class="text-lg font-medium text-gray-900 mb-2">
+            Answer 3 Quick Questions Below to
+            <span class="underline">Check Eligibility!</span>
+          </p>
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Tap Your Age</h2>
+          <div class="flex flex-col md:flex-row justify-center md:space-x-4 space-y-4 md:space-y-0">
+            <button id="step1-yes-under-55" onclick="addParam('age','53')" class="text-3xl bg-[#59b555] text-white font-bold py-4 px-8 rounded-full w-full md:w-auto shadow">
+              Under 54
+            </button>
+            <button id="step1-yes-55-79" onclick="addParam('age','65')" class="text-3xl bg-[#59b555] text-white font-bold py-4 px-8 rounded-full w-full md:w-auto shadow">
+              54 - 79
+            </button>
+            <button id="step1-no" onclick="addParam('age','86')" class="text-3xl bg-[#59b555] text-white font-bold py-4 px-8 rounded-full w-full md:w-auto shadow">
+              Over 80
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- /question-->
+    </div>
+  </div>
+  <!-- /Step 1 -->
+
+  <!-- Step 2 -->
+  <div id="step2" class="hidden">
+    <div class="container mx-auto">
+      <div class="mx-auto w-full md:w-1/4 border-t border-[#dfe3e6] mt-4 pt-4">
+        <div class="text-center">Question 2/3</div>
+
+        <div class="flex items-center justify-center w-full">
+          <div class="text-center w-full px-4">
+            <h1 class="text-2xl font-bold mb-6">Are you a US citizen?</h1>
+            <div class="space-y-4">
+              <button id="step2-yes" class="block w-full px-4 py-4 bg-[#4396d5] text-white font-bold rounded-lg text-center text-3xl shadow">
+                Yes
+              </button>
+              <button id="step2-no" class="block w-full px-4 py-4 bg-[#4396d5] text-white font-bold rounded-lg text-center text-3xl shadow">
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Step 2 -->
+
+  <!-- Step 3 -->
+  <div id="step3" class="hidden">
+    <div class="container mx-auto">
+      <div class="mx-auto w-full md:w-1/4 border-t border-[#dfe3e6] mt-4 pt-4">
+        <div class="text-center">Question 3/3</div>
+        <div class="flex items-center justify-center w-full">
+          <div class="text-center w-full px-4">
+            <h1 class="text-2xl font-bold mb-6">Are you employed?</h1>
+            <div class="space-y-4">
+              <a class="dynamic-link add-url-params block w-full sm:w-auto px-4 py-4 bg-[#4396d5] text-white font-bold rounded-lg text-center text-3xl shadow " href="congratulation.php">
+                Yes
+              </a>
+              <a class="dynamic-link add-url-params block w-full sm:w-auto px-4 py-4 bg-[#4396d5] text-white font-bold rounded-lg text-center text-3xl shadow" href="congratulation.php">
+                No
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Step 3 -->
+
+  <!-- Sorry -->
+  <div id="sorry" class="container mx-auto hidden">
+    <div class="mx-auto w-full md:w-3/4 border-t border-[#dfe3e6] mt-4 pt-4">
+      <div class="max-w-3/4 mx-auto bg-[#eafcfc] rounded-lg shadow-lg p-6 text-center">
+        Sorry, we can't help you.
+        <br>
+        The questions you answered have helped us determine that we are not
+        able to help you at this time.
+      </div>
+    </div>
+  </div>
+  <!-- /Sorry -->
+
+  <!-- Footer -->
+  <div class="mt-96 text-sm">
+    <div class="text-center">
+      <a href="privacy.php">Privacy</a> | <a href="terms.php">Terms</a>
+    </div>
+    <div class="text-center">
+      ©  2025 Serenelegacyplan All Rights Reserved.
+    </div>
+  </div>
+  <!-- /Footer -->
+
+  <script src="js/jquery.min.js"></script>
+  <script>
+    // Step 1
+    document
+      .getElementById("step1-yes-under-55")
+      .addEventListener("click", function () {
+        document.getElementById("step1").classList.add("hidden");
+        document.getElementById("step2").classList.remove("hidden");
+      });
+    document
+      .getElementById("step1-yes-55-79")
+      .addEventListener("click", function () {
+        document.getElementById("step1").classList.add("hidden");
+        document.getElementById("step2").classList.remove("hidden");
+
+      });
+    document
+      .getElementById("step1-no")
+      .addEventListener("click", function () {
+        document.getElementById("step1").classList.add("hidden");
+        document.getElementById("step2").classList.remove("hidden");
+
+      });
+
+    // Step 2
+    document
+      .getElementById("step2-yes")
+      .addEventListener("click", function () {
+        document.getElementById("step2").classList.add("hidden");
+        document.getElementById("step3").classList.remove("hidden");
+
+      });
+    document
+      .getElementById("step2-no")
+      .addEventListener("click", function () {
+        document.getElementById("step2").classList.add("hidden");
+        document.getElementById("step3").classList.remove("hidden");
+      });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const testimonials = document.querySelectorAll(".testimonial");
+      let currentIndex = 0;
+
+      function showNextTestimonial() {
+        // Hide current testimonial
+        testimonials[currentIndex].classList.remove("show");
+
+        // Update index for the next testimonial
+        currentIndex = (currentIndex + 1) % testimonials.length;
+
+        // Display the next testimonial
+        testimonials[currentIndex].classList.add("show");
+      }
+
+      // Initialize by showing the first testimonial
+      testimonials[currentIndex].classList.add("show");
+
+      // Change image every 3 seconds
+      setInterval(showNextTestimonial, 3000);
+    });
+  </script>
+  <script>
+    (function () {
+      let oParams = new URLSearchParams(window.location.search);
+      let sParams = oParams.toString();
+
+      if (
+        sParams != null &&
+        typeof sParams == "string" &&
+        (sParams = sParams.trim()) != ""
+      ) {
+        $(".add-url-params").each(function () {
+          let oElement = $(this);
+          let sHref = oElement.attr("href");
+          if (
+            sHref != null &&
+            typeof sHref == "string" &&
+            (sHref = sHref.trim()) != ""
+          ) {
+            oElement.attr(
+              "href",
+              sHref + (sHref.includes("?") ? "&" : "?") + sParams
+            );
+          }
+        });
+      }
+    })();
+
+ function addParam(key, value) {
+  if (!key) return;
+
+  const url = new URL(window.location.href);
+  const params = url.searchParams;
+
+  // If the key doesn't already exist, append it
+  if (!params.has(key)) {
+    params.append(key, value);
+    window.history.replaceState({}, '', url.toString());
+  }
+
+  // Generate the new href string based on whether parameters already exist
+  const newParams = url.searchParams.toString();
+  const newUrl = './congratulation.php' + (newParams ? '?' + newParams : '');
+
+  // Update all anchor tags with the class 'dynamic-link'
+  const anchors = document.querySelectorAll('a.dynamic-link');
+
+  anchors.forEach(anchor => {
+    anchor.href = newUrl;
+  });
+}
+
+
+ function setAmount() {
+    const values = [25000, 35000, 40000];
+    const randomValue = values[Math.floor(Math.random() * values.length)];
+    document.getElementById("amount").textContent = randomValue.toLocaleString();
+  }
+
+  setAmount();
+  </script>
+
+
+
+</body></html>
